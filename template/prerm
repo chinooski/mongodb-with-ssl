@@ -1,0 +1,23 @@
+#!/bin/sh
+# prerm script for mongodb
+
+set -e
+
+case "$1" in
+    remove|upgrade|deconfigure)
+        # stop service if running
+        service mongod stop
+    ;;
+
+    failed-upgrade)
+    ;;
+
+    *)
+        echo "prerm called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0
