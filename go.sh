@@ -75,7 +75,7 @@ git checkout r$VERSION
 
 echo "${blue}>${reset} Compilation ahead, this may take a while, go grab a book or something!"
 sleep 3
-scons --64 --ssl --release --no-glibc-check -j $PARALLEL --prefix=$TEMP install
+scons --64 --ssl --release -j $PARALLEL --prefix=$TEMP install
 
 # PACKING
 echo "${blue}>${reset} Binaries are ready, let's create the package."
